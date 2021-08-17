@@ -6,13 +6,31 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
+    storage[someInstance.size()] = value;
   };
 
   someInstance.pop = function() {
+    // O - last element of stack      I - none    C - can't use t his/vanilla     E = none
+
+    var element = storage[someInstance.size() - 1];
+    delete storage[someInstance.size() - 1];
+
+
+
+    return element;
   };
 
   someInstance.size = function() {
+    return Object.values(storage).length;
   };
 
   return someInstance;
+
 };
+
+
+
+var add = function() {
+  return 5 + 5;
+};
+add();
