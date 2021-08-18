@@ -27,10 +27,3 @@ var Stack = function() {
   return someInstance;
 
 };
-
-
-
-var add = function() {
-  return 5 + 5;
-};
-add();
