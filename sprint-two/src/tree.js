@@ -3,20 +3,37 @@ var Tree = function(value) {
   newTree.value = value;
 
   // your code here
-  newTree.children = null;  // fix me
-
+  // // var arr = [];
+  // // arr.push(value);
+  newTree.children = [];// fix me
+  _.extend(newTree, treeMethods);
   return newTree;
 };
 
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  // // this.arr.push(value);
+  this.children.push(Tree(value));
+
 };
 
 treeMethods.contains = function(target) {
+  // // return this.arr.includes(target);
+  if (this.value === target) {
+    return true;
+  }
+
+  if (this.children.length > 0) {
+    for (var i = 0; i < this.children.length; i++) {
+      if (this.children[i].contains(target)) {
+        return true;
+      }
+    }
+  }
+  return false;
+
 };
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions?
